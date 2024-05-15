@@ -26,7 +26,7 @@ APPLICATIONS SPECS:-
                             >Build -Maven
                             >custom serverport- "3003"
                             >Refer to rest from POM.XML config file
-                            "Refer to MongoDB "test" DB to find the collection 
+                            >Refer to MongoDB "test" DB to find the collection 
 
 
 DEPENDENCIES USED:-
