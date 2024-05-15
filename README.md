@@ -24,7 +24,9 @@ OPERATIONS:-
 APPLICATIONS SPECS:-
                             >Java ver-17
                             >Build -Maven
-                            > Refer to rest from POM.XML config file
+                            >custom serverport- "3003"
+                            >Refer to rest from POM.XML config file
+                            "Refer to MongoDB "test" DB to find the collection 
 
 
 DEPENDENCIES USED:-
