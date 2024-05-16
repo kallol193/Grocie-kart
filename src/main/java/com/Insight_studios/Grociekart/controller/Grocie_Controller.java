@@ -3,6 +3,7 @@ package com.Insight_studios.Grociekart.controller;
 import com.Insight_studios.Grociekart.entity.Grocie_Item;
 import com.Insight_studios.Grociekart.repository.Grocie_repo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +23,12 @@ public class Grocie_Controller {
     }
 
     @GetMapping("/getItem/{id}")
-    public Grocie_Item getItemById(@PathVariable Integer id)
-    {
-
-        return grocie_repo.findById(id).orElse(null);
-
+    public ResponseEntity<Grocie_Item> getItemById(@PathVariable Integer id) {
+        return grocie_repo.findById(id)
+                .map(item -> ResponseEntity.ok(item)) // Return item with OK status
+                .orElseGet(() -> ResponseEntity.notFound().build()); // Return not found
     }
+
 
     @PostMapping("/postItem")
     public void  postItem(@RequestBody Grocie_Item grocie_item){
